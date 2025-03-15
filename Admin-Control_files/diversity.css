@@ -133,10 +133,12 @@
 }
 .search-cadidate-div p{
     font-size: 18px;
+    user-select: none;
 }
 .search-cadidate-div i{
     font-size: 20px;
     color: black;
+    user-select: none;
 }
 .search-cadidate-body{
     width: 100%;
@@ -162,6 +164,7 @@
     font-size: 16px;
     color: #141B5F;
     margin-bottom: 10px;
+    user-select: none;
 }
 .search-cadidate-keyboard input{
     height: 40px;
@@ -181,6 +184,7 @@
 }
 .search-cadidate-mark p{
     margin-top: 10px;
+    user-select: none;
 }
 .search-cadidate-skill{
     display: flex;
@@ -199,10 +203,12 @@
 }
 .add-keywords label{
     font-size: 14px;
+    user-select: none;
 }
 .add-keywords p{
     font-size: 22px;
     margin-top: 10px;
+    user-select: none;
 }
 .add-skill{
     height: 30px;
@@ -214,9 +220,11 @@
 .add-skill p{
     font-size: 20px;
     margin-top: 10px;
+    user-select: none;
 }
 .add-skill label{
-    font-size: 14px
+    font-size: 14px;
+    user-select: none;
 }
 .search-cadidate-exprience{
     width: 100%;
@@ -230,6 +238,7 @@
     font-size: 16px;
     color: #141B5F;
     margin-bottom: 5px;
+    user-select: none;
 }
 .search-cadidate-exprience-1{
     width: 100%;
@@ -244,7 +253,7 @@
 .search-cadidate-exprience-1-1{
     width: 30%;
     
-    /* background-color: bisque; */
+    /* background-color: rgb(153, 95, 24); */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -287,6 +296,8 @@
     font-size: 18px;
     padding: 20px;
     color: #555555;
+    user-select: none;
+    user-select: none;
 }
 .employement-candidate-div i{
     font-size: 20px;
@@ -297,16 +308,21 @@
     min-height: 200px;
     height: auto;
 
+    
+    transition: height 0.3s ease-in-out;
     background-color: aqua;
     display: none;
     flex-direction: column;
 }
 
+
+
 .select{
     border: none;
     font-size: 16px;
     color: #555555;
-    
+    max-width: 80px;
+    min-width: 60px;
 }
 
 .search-cadidate-exprience-1-1-input{
@@ -324,6 +340,7 @@
     margin-left: 14px;
     margin-top: 5px;
     border-right: 0.5px solid black;
+    user-select: none;
 }
 .search-cadidate-exprience-1-1-input input{
     height: 38px;
@@ -335,6 +352,18 @@
     padding-left: 5px;
     border: none;
     padding-top: 2px;
+}
+.select-option{
+    height: 38px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    border-radius: 10px;
+    padding-left: 5px;
+    border: none;
+    padding-top: 2px;
+    border: 0.5px solid #999999;
 }
 .search-cadidate-exprience-1-1-input input:focus{
     border: none; /* Removes border */
@@ -356,6 +385,42 @@
 .select-candidate-div{
     min-height: 40px;
     height: auto;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    /* background-color: #FFBD03; */
+    justify-content: space-evenly;
+}
+.resume-select-candidate-div{
+    min-height: 40px;
+    height: auto;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    /* background-color: #FFBD03; */
+    justify-content: space-evenly;
+}
+.verification-select-candidate-div{
+    min-height: 40px;
+    height: auto;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    /* background-color: #FFBD03; */
+    justify-content: space-evenly;
+}
+.gender-select-candidate-div{
+    min-height: 40px;
+    height: auto;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    /* background-color: #FFBD03; */
+    justify-content: space-evenly;
+}
+.Notifice-select-candidate-div{
+    min-height: 40px;
+    height: auto;
     width: 80%;
     display: flex;
     align-items: center;
@@ -366,19 +431,9 @@
     font-size: 18px;
     margin-top: 5px;
     margin-bottom: 10px;
+    user-select: none;
 }
-.select-candidate{
-    height: 40px;
-    padding-left: 8px;
-    padding-right: 8px;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    border-radius: 10px;
-    cursor: pointer;
-}
+
 
 .select-candidate.active {
     background-color: #ff7f00; /* Highlight color */
@@ -401,8 +456,94 @@
     background-color: #FFBD03;
     border: 0.5px solid black;
 }
+.education-option{
+    display: flex;
+    flex-direction: column;
+    min-height: 10px;
+    height: auto;
+    /* background-color: #141B5F; */
+}
+
+.tenth p, .twelfth p, .ug p, .pg p , .Diplomo p, .phd p{
+    font-size: 16px;
+    color: #141B5F;
+    margin-bottom: 10px;
+}
+
+.tenth input, .twelfth input, .ug input, .pg input, .diplomo input, .phd input{
+    height: 40px;
+    border-radius: 10px;
+    border: 0.5px solid #999999;
+    transition: all 0.3s ease;   /* Smooth transition for effects */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
 
 
+
+
+
+
+
+
+
+
+.select-candidate{
+    height: 40px;
+    min-width: 40px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 3px;
+    transition: 0.3s;
+    user-select: none; /* Disable text selection */
+}
+.select-candidate-edu{
+    height: 40px;
+    min-width: 40px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 3px;
+    transition: 0.3s;
+    user-select: none; /* Disable text selection */
+}
+.select-candidate-edu.active {
+    background-color: #ff7f00;
+    color: white;
+    border-color: #ff7f00;
+}
+.select-candidate.active {
+    background-color: #ff7f00;
+    color: white;
+    border-color: #ff7f00;
+}
+
+.education-option > div {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    margin-bottom: 10px;
+    /* border-bottom: 1px solid #999; */
+}
+
+/* Prevent text selection inside select-candidate div */
+.select-candidate p {
+    margin: 0;
+    padding: 0;
+    user-select: none; /* Disable text selection */
+}
 
 @media (min-width : 850px) and (max-width : 1200px) {
     .navigation-header-1-1{

@@ -1,4 +1,5 @@
-const openBox = document.getElementById('open-fa-caret-right');
+document.addEventListener("DOMContentLoaded", function () {
+    const openBox = document.getElementById('open-fa-caret-right');
 const employementBody = document.getElementById('employement-body');
 
 openBox.addEventListener('click', () => {
@@ -59,22 +60,36 @@ openBoxAdditional.addEventListener('click', () => {
         // rRight.style.height = '1500px'
     }
 });
+    // Function to toggle sections smoothly
+    function setupToggle(buttonId, bodyId) {
+        const button = document.getElementById(buttonId);
+        const body = document.getElementById(bodyId);
 
+        button.addEventListener("click", function (event) {
+            event.stopPropagation(); // Prevent event conflicts
 
-document.addEventListener("DOMContentLoaded", function () {
-    const candidates = document.querySelectorAll(".select-candidate");
+            // Toggle 'open' class for smooth expansion/collapse
+            body.classList.toggle("open");
 
-    candidates.forEach(candidate => {
-        candidate.addEventListener("click", function () {
-            // Toggle the "active" class (select/unselect)
-            this.classList.toggle("active");
+            // Change caret icon direction dynamically
+            const icon = button.querySelector("i");
+            if (body.classList.contains("open")) {
+                icon.classList.remove("fa-caret-right");
+                icon.classList.add("fa-caret-down");
+            } else {
+                icon.classList.remove("fa-caret-down");
+                icon.classList.add("fa-caret-right");
+            }
         });
-    });
-});
+    }
 
+    // Apply toggle function to all collapsible sections
+    setupToggle("open-fa-caret-right", "employement-body");
+    setupToggle("open-education", "education-body");
+    setupToggle("open-diversity", "diversity-body");
+    setupToggle("open-additional", "additional-body");
 
-
-document.addEventListener("DOMContentLoaded", function () {
+    // Handle selection in education level
     const candidates = document.querySelectorAll(".select-candidate-edu");
 
     // Mapping text values to valid class names
@@ -106,6 +121,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
             }
+        });
+    });
+
+    // Handle multi-selection in other areas (e.g., gender, verification)
+    const selectableElements = document.querySelectorAll(".select-candidate");
+    
+    selectableElements.forEach(element => {
+        element.addEventListener("click", function () {
+            this.classList.toggle("active"); // Toggle the active class
         });
     });
 });
