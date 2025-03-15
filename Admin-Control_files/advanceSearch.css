@@ -86,13 +86,52 @@
     position: relative;
 }
 .search-container input {
+    height: 58px;
     width: 100%;
-    height: 45px;
-    font-size: 16px;
-    border: 1px solid #ccc;
     border-radius: 10px;
-    padding-left: 5px;
+    border: 1px solid #999999;
+    padding-left: 10px;
+    font-size: 16px;
+    color: #333;
+    /*background-color: #f0f4f8;  */
+    /* Light background color */
+    transition: all 0.3s ease;   /* Smooth transition for effects */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for elevation */
 }
+/* Focused input style (when user clicks/selects the input field) */
+.search-container input:focus{
+    border: 1px solid #999999;  /* Blue border on focus */
+    background-color: #fff;     /* White background when focused */
+    box-shadow: 0 4px 8px rgba(0, 91, 181, 0.3); /* Subtle blue shadow */
+    outline: none;  /* Remove default outline */
+}
+
+/* Hover effect (when the user hovers over the input) */
+.search-container input:hover  {
+    border: 1px solid #999999;  /* Change border color on hover */
+    background-color: #e8f0fe;   /* Slightly darker background */
+    box-shadow: 0 2px 8px rgba(0, 91, 181, 0.3); /* Light shadow on hover */
+}
+
+/* Active state style when typing (focused and typed into) */
+.search-container input:active{
+    border: 1px solid #005bb5;  /* Darker blue border when typing */
+    box-shadow: 0 2px 8px rgba(0, 91, 181, 0.3); /* Darker shadow when typing */
+}
+
+/* Placeholder text customization */
+.search-container input::placeholder {
+    color: #999;  /* Light grey placeholder */
+    font-style: italic;
+    opacity: 0.9;  /* Slightly transparent */
+    user-select: none;
+}
+
+
+
+
+
+
 .suggestion-box {
     position: absolute;
     width: 100%;
@@ -118,13 +157,37 @@
     gap: 5px;
 }
 .skill-box {
-    display: flex;
+    /* display: flex;
     align-items: center;
     text-align: center;
     background: #007bff;
     color: white;
     padding: 3px 10px;
-    border-radius: 5px;
+    border-radius: 5px; */
+
+
+
+
+    height: 38px;
+    min-width: 90px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 8px;
+    padding-right: 8px;
+    /* background-color: #2a28b4; */
+    background: #007bff;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 3px;
+    transition: 0.3s;
+    user-select: none; /* Disable text selection */
+    text-align: center;
+    /* overflow-x: hidden; */
 }
 .skill-box input {
     margin-right: 5px;
@@ -135,6 +198,7 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
 .skill-box p{
+    
     margin-top: 10px;
     font-size: 18px;
 }

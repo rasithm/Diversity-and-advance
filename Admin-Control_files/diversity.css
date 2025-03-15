@@ -134,11 +134,13 @@
 .search-cadidate-div p{
     font-size: 18px;
     user-select: none;
+    color: #141B5F;
 }
 .search-cadidate-div i{
     font-size: 20px;
     color: black;
     user-select: none;
+    color: #141B5F;
 }
 .search-cadidate-body{
     width: 100%;
@@ -158,11 +160,12 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
-    border-bottom: 1px solid #999999;
+    /* border-bottom: 1px solid #999999; */
 }
 .search-cadidate-keyboard p{
     font-size: 16px;
-    color: #141B5F;
+    /* color: #141B5F; */
+    color: black;
     margin-bottom: 10px;
     user-select: none;
 }
@@ -182,9 +185,39 @@
     
     gap: 10px;
 }
+
+.search-cadidate-keyboard .search-cadidate-mark ,.employement-candidate .search-cadidate-mark{
+    display: flex;
+    margin-top: 10px;
+    /* background-color: bisque; */
+    align-items: center;
+    
+    gap: 10px;
+}
+.search-cadidate-keyboard .search-cadidate-mark input, .employement-candidate .search-cadidate-mark input{
+    background-color: white;
+    width: 15px;
+    height: 15px;
+}
+.search-cadidate-keyboard .search-cadidate-mark p , .employement-candidate .search-cadidate-mark p{
+    margin-top: 10px;
+    user-select: none;
+    font-size: 14px;   
+}
+.search-cadidate-mark input{
+    background-color: white;
+    width: 15px;
+    height: 15px;
+}
 .search-cadidate-mark p{
     margin-top: 10px;
     user-select: none;
+    font-size: 14px;
+}
+.search-cadidate-mark-p{
+    margin-top: 10px;
+    user-select: none;
+    font-size: 10px;
 }
 .search-cadidate-skill{
     display: flex;
@@ -266,10 +299,59 @@
     height: 40px;
     width: 80%;
     border-radius: 10px;
-    border: 0.5px solid  #999999;
+    border: 1px solid #999999;
+    padding-left: 10px;
+    font-size: 16px;
+    color: #333;
+    /*background-color: #f0f4f8;  */
+    /* Light background color */
+    transition: all 0.3s ease;   /* Smooth transition for effects */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for elevation */
+}
+
+.company-input {
+    width: 800px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #999999;
+    padding-left: 10px;
+    font-size: 16px;
+    color: #333;
+    /*background-color: #f0f4f8;  */
+    /* Light background color */
+    transition: all 0.3s ease;   /* Smooth transition for effects */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for elevation */
 }
 
 
+/* Focused input style (when user clicks/selects the input field) */
+.search-cadidate-exprience-1-1 input:focus{
+    border: 1px solid #999999;  /* Blue border on focus */
+    background-color: #fff;     /* White background when focused */
+    box-shadow: 0 4px 8px rgba(0, 91, 181, 0.3); /* Subtle blue shadow */
+    outline: none;  /* Remove default outline */
+}
+
+/* Hover effect (when the user hovers over the input) */
+.search-cadidate-exprience-1-1 input:hover  {
+    border: 1px solid #999999;  /* Change border color on hover */
+    background-color: #e8f0fe;   /* Slightly darker background */
+    box-shadow: 0 2px 8px rgba(0, 91, 181, 0.3); /* Light shadow on hover */
+}
+
+/* Active state style when typing (focused and typed into) */
+.search-cadidate-exprience-1-1 input:active{
+    border: 1px solid #005bb5;  /* Darker blue border when typing */
+    box-shadow: 0 2px 8px rgba(0, 91, 181, 0.3); /* Darker shadow when typing */
+}
+
+/* Placeholder text customization */
+.search-cadidate-exprience-1-1 input::placeholder {
+    color: #999;  /* Light grey placeholder */
+    font-style: italic;
+    opacity: 0.7;  /* Slightly transparent */
+    user-select: none;
+}
 .employement-candidate{
     width: 100%;
     min-height: 60px;
@@ -295,22 +377,24 @@
 .employement-candidate-div p{
     font-size: 18px;
     padding: 20px;
-    color: #555555;
+    /* color: #555555; */
+    color: #141B5F;
     user-select: none;
     user-select: none;
 }
 .employement-candidate-div i{
     font-size: 20px;
-    color: #555555;
+    /* color: #555555; */
+    color: #141B5F;
 }
 .Employement-body{
     width: 100%;
-    min-height: 200px;
+    min-height: 100px;
     height: auto;
-
+    padding-bottom: 20px;
     
     transition: height 0.3s ease-in-out;
-    background-color: aqua;
+    /* background-color: aqua; */
     display: none;
     flex-direction: column;
 }
@@ -334,6 +418,9 @@
     border-radius: 8px;
     border: 1px solid black;
 }
+
+
+
 .search-cadidate-exprience-1-1-input p{
     width: 20%;
     font-size: 17px;
@@ -343,15 +430,45 @@
     user-select: none;
 }
 .search-cadidate-exprience-1-1-input input{
-    height: 38px;
-    width: 90%;
-    display: flex;
-    align-items: center;
-    padding-left: 15px;
-    border-radius: 10px;
-    padding-left: 5px;
+    height: 35px;
+    width: 80%;
+    /* border-radius: 10px; */
+    margin-left: 2px;
+    background-color: #fff;
     border: none;
-    padding-top: 2px;
+    padding-left: 10px;
+    font-size: 16px;
+    
+    /*background-color: #f0f4f8;  */
+    /* Light background color */
+    transition: all 0.3s ease;   /* Smooth transition for effects */
+    /*  */
+    /* Focused input style (when user clicks/selects the input field) */
+}
+.search-cadidate-exprience-1-1-input input:focus{
+      /* Blue border on focus */
+         /* White background when focused */
+         background-color: #fff;
+    outline: none;  /* Remove default outline */
+}
+
+/* Hover effect (when the user hovers over the input) */
+.search-cadidate-exprience-1-1-input input:hover  {
+    border: none;  /* Change border color on hover */
+    background-color: #fff;
+}
+
+/* Active state style when typing (focused and typed into) */
+.search-cadidate-exprience-1-1-input input:active{
+    border: none;  /* Darker blue border when typing */
+    background-color: #fff;
+}
+
+/* Placeholder text customization */
+.search-cadidate-exprience-1-1-input input::placeholder {
+user-select: none; 
+    font-style: italic;
+    opacity: 0.7;  /* Slightly transparent */
 }
 .select-option{
     height: 38px;
@@ -426,6 +543,7 @@
     align-items: center;
     /* background-color: #FFBD03; */
     justify-content: space-evenly;
+    margin-bottom: 15px;
 }
 .Employement-body p{
     font-size: 18px;
@@ -464,10 +582,10 @@
     /* background-color: #141B5F; */
 }
 
-.tenth p, .twelfth p, .ug p, .pg p , .Diplomo p, .phd p{
+.tenth p, .twelfth p, .ug p, .pg p , .diplomo p, .phd p{
     font-size: 16px;
     color: #141B5F;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 
 .tenth input, .twelfth input, .ug input, .pg input, .diplomo input, .phd input{
@@ -488,8 +606,8 @@
 
 
 .select-candidate{
-    height: 40px;
-    min-width: 40px;
+    height: 38px;
+    min-width: 90px;
     padding-left: 8px;
     padding-right: 8px;
     background-color: #fff;
@@ -497,15 +615,16 @@
     justify-content: center;
     align-items: center;
     border: 1px solid black;
-    border-radius: 10px;
+    border-radius: 50px;
     cursor: pointer;
     margin: 3px;
     transition: 0.3s;
     user-select: none; /* Disable text selection */
+    overflow: hidden;
 }
 .select-candidate-edu{
-    height: 40px;
-    min-width: 40px;
+    height: 38px;
+    min-width: 90px;
     padding-left: 8px;
     padding-right: 8px;
     background-color: #fff;
@@ -513,7 +632,7 @@
     justify-content: center;
     align-items: center;
     border: 1px solid black;
-    border-radius: 10px;
+    border-radius: 50px;
     cursor: pointer;
     margin: 3px;
     transition: 0.3s;
