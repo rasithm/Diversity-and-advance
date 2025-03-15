@@ -1,40 +1,84 @@
 document.addEventListener("DOMContentLoaded", function () {
-    function setupToggle(buttonId, bodyId) {
-        const button = document.getElementById(buttonId);
-        const body = document.getElementById(bodyId);
+    // Employment Section Toggle
+    const openBox = document.getElementById("open-fa-caret-right");
+    const employementBody = document.getElementById("employement-body");
+    
+    openBox.addEventListener("click", () => {
+        if (employementBody.style.display === "none" || !employementBody.style.display) {
+            employementBody.style.display = "flex";
+        } else {
+            employementBody.style.display = "none";
+        }
+    });
 
-        button.addEventListener("click", function () {
-            if (body.classList.contains("open")) {
-                // Close the section
-                body.style.height = body.scrollHeight + "px"; // Set current height for smooth transition
-                setTimeout(() => {
-                    body.style.height = "0"; // Shrink height to 0
-                }, 10);
+    // Education Section Toggle
+    const openBoxEducation = document.getElementById("open-education");
+    const educationBody = document.getElementById("education-body");
+    
+    openBoxEducation.addEventListener("click", () => {
+        if (educationBody.style.display === "none" || !educationBody.style.display) {
+            educationBody.style.display = "flex";
+        } else {
+            educationBody.style.display = "none";
+        }
+    });
 
-                setTimeout(() => {
-                    body.classList.remove("open");
-                    body.style.display = "none"; // Remove display: flex
-                }, 300); // Wait for animation to finish
-            } else {
-                // Open the section
-                body.style.display = "flex"; // Set display before animation
-                body.style.height = "0"; // Start from height 0
-                setTimeout(() => {
-                    body.classList.add("open");
-                    body.style.height = body.scrollHeight + "px"; // Expand to full height
-                }, 10);
-            }
+    // Diversity Section Toggle
+    const openBoxDiversity = document.getElementById("open-diversity");
+    const diversityBody = document.getElementById("diversity-body");
+    
+    openBoxDiversity.addEventListener("click", () => {
+        if (diversityBody.style.display === "none" || !diversityBody.style.display) {
+            diversityBody.style.display = "flex";
+        } else {
+            diversityBody.style.display = "none";
+        }
+    });
 
-            // Toggle caret icon direction
-            const icon = button.querySelector("i");
-            icon.classList.toggle("fa-caret-down");
-            icon.classList.toggle("fa-caret-right");
+    // Additional Section Toggle
+    const openBoxAdditional = document.getElementById("open-additional");
+    const additionalBody = document.getElementById("additional-body");
+    
+    openBoxAdditional.addEventListener("click", () => {
+        if (additionalBody.style.display === "none" || !additionalBody.style.display) {
+            additionalBody.style.display = "flex";
+        } else {
+            additionalBody.style.display = "none";
+        }
+    });
+
+    // Candidate Selection Toggle
+    const candidates = document.querySelectorAll(".select-candidate");
+    
+    candidates.forEach(candidate => {
+        candidate.addEventListener("click", function () {
+            this.classList.toggle("active");
         });
-    }
+    });
 
-    // Apply toggle function to all collapsible sections
-    setupToggle("open-fa-caret-right", "employement-body");
-    setupToggle("open-education", "education-body");
-    setupToggle("open-diversity", "diversity-body");
-    setupToggle("open-additional", "additional-body");
-});
+    // Education Candidate Selection with Input Toggle
+    const candidatesEdu = document.querySelectorAll(".select-candidate-edu");
+    const classMap = {
+        "10th": "tenth",
+        "12th": "twelfth",
+        "UG": "ug",
+        "PG": "pg",
+        "Diplomo": "diplomo",
+        "PHD": "phd"
+    };
+
+    candidatesEdu.forEach(candidate => {
+        candidate.addEventListener("click", function () {
+            const selectedText = this.textContent.trim();
+            const targetClass = classMap[selectedText];
+
+            if (targetClass) {
+                const targetDiv = document.querySelector(`.${targetClass}`);
+                if (targetDiv) {
+                    this.classList.toggle("active");
+                    targetDiv.style.display = this.classList.contains("active") ? "flex" : "none";
+                }
+            }
+        });
+    });
+})
